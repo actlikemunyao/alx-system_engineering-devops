@@ -1,1 +1,2 @@
-echo "$((128 + 1))"
+#!/bin/bash
+export TRUEKNOWLEDGE=1209
