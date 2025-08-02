@@ -1,1 +1,2 @@
-echo $PATH | tr ":" "\n"
+#!/bin/bash
+echo $PATH | tr ':' '\n'
