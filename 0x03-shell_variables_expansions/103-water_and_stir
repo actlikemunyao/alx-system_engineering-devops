@@ -1,0 +1,1 @@
+echo "water" | sed "s/.*/& and stir!/"
