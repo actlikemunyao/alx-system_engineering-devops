@@ -1,0 +1,23 @@
+# 1. Distributed Web Infrastructure
+
+**Infrastructure Description:**
+- Load balancer (HAProxy)
+- Two app servers (Nginx + Gunicorn)
+- One MySQL DB server
+- DNS resolves `www.foobar.com` to the load balancer
+
+**Component Roles:**
+- **Load Balancer**: Distributes traffic using Round Robin
+- **App Servers**: Serve app code and static assets
+- **MySQL DB**: Stores persistent data
+
+**Communication Flow:**
+- Client → DNS → Load Balancer → App Servers → MySQL
+
+**Improvements:**
+- Redundancy for app layer
+- Reduced load on individual app servers
+
+**Issues:**
+- Single DB is still a SPOF
+- No HTTPS or monitoring yet

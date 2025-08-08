@@ -1,0 +1,21 @@
+# 0. Simple Web Stack
+
+**Infrastructure Description:**
+- 1 physical server with Ubuntu 20.04
+- Domain name: `www.foobar.com` pointing to server IP `8.8.8.8`
+- Server runs: Nginx (reverse proxy), Gunicorn (application server), MySQL (database), App code
+
+**Component Roles:**
+- **DNS (A record)**: Resolves `www.foobar.com` to `8.8.8.8`
+- **Nginx**: Serves static content and forwards dynamic requests to Gunicorn
+- **Gunicorn**: Runs the Python web app
+- **MySQL**: Stores data used by the app
+- **App code**: Business logic
+
+**Communication Flow:**
+- Client → DNS → Nginx → Gunicorn → MySQL
+
+**Drawbacks:**
+- Single point of failure (SPOF)
+- Not scalable or redundant
+- Downtime during updates

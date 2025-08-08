@@ -1,0 +1,25 @@
+# 2. Secured and Monitored Web Infrastructure
+
+**Infrastructure Description:**
+- Load balancer with SSL termination
+- HTTPS traffic only
+- Firewalls between each layer
+- Monitoring (DataDog/SumoLogic) on each component
+
+**Component Roles:**
+- **SSL Termination at LB**: Secures traffic from client
+- **Firewalls**: Protects each layer (web/app/db)
+- **Monitoring Agents**: Track logs, requests, errors
+
+**Communication Flow:**
+- Client → DNS → HTTPS Load Balancer → App Servers → DB Server
+- Monitoring agents send data to external dashboard
+
+**Improvements:**
+- Encrypted traffic (HTTPS)
+- Monitored metrics and logs
+- Firewalls reduce attack surface
+
+**Remaining Issues:**
+- DB still a single write point
+- SSL only at LB (internal traffic unencrypted)
